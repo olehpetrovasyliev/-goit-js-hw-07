@@ -15,7 +15,7 @@ const onImgClick = (evt) => {
   if (evt.target.nodeName !== "IMG") {
     return;
   }
-  const basicLightbox = require("basiclightbox");
+
   const instance = basicLightbox.create(
     `<img src = ${evt.target.dataset.source} alt = ${evt.target.alt} width = "800" height = "600">`
   );
