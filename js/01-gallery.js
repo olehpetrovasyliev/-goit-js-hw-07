@@ -20,6 +20,13 @@ const onImgClick = (evt) => {
     `<img src = ${evt.target.dataset.source} alt = ${evt.target.alt} width = "800" height = "600">`
   );
   instance.show();
+  if (instance.visible()) {
+    gallery.addEventListener("keydown", (key) => {
+      if (key.code === "Escape") {
+        instance.close();
+      }
+    });
+  }
 };
 
 gallery.addEventListener("click", onImgClick);
