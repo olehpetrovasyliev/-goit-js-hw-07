@@ -26,6 +26,9 @@ const onImgClick = (evt) => {
         instance.close();
       }
     });
+    onClose: (instance) => {
+      gallery.removeEventListener("keydown");
+    };
   }
 };
 
