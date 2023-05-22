@@ -31,4 +31,4 @@ const onImgClick = (evt) => {
 
 gallery.addEventListener("click", onImgClick);
 
-console.log(galleryItems);
+// console.log(galleryItems);
