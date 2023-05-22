@@ -26,7 +26,6 @@ const onImgClick = (evt) => {
     if (key.code === "Escape") {
       instance.close();
     }
-    console.log(10);
   };
   instance.show();
   if (instance.visible()) {
@@ -34,16 +33,4 @@ const onImgClick = (evt) => {
   }
 };
 
-// instance.show();
-// const escCreate = (key) => {
-//   if (key.code === "Escape") {
-//     instance.close();
-//   }
-// };
-// if (instance.visible()) {
-//   gallery.addEventListener("keydown", EscCreate);
-// }
-
 gallery.addEventListener("click", onImgClick);
-
-// console.log(galleryItems);
