@@ -10,17 +10,25 @@ const galleryHTML = galleryItems
 gallery.insertAdjacentHTML("afterbegin", galleryHTML);
 console.log(galleryItems);
 
-const onImgClick = (evt) => {
+new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
+
+/*galleryModal.on("show.simplelightbox", function () {
+  console.log("Hello");
+});*/
+
+/*const onImgClick = (evt) => {
   evt.preventDefault();
   if (evt.target.nodeName !== "IMG") {
     return;
   }
   // console.log(evt.target.nodeName);
-
-  let galleryFn = new SimpleLightbox(".gallery a");
-  galleryFn.on("show.simplelightbox", () => {
-    console.log(1);
+  const galleryModal = new SimpleLightbox(".gallery a");
+  galleryModal.on("show.simplelightbox", function () {
+    console.log("Hello");
   });
 };
 
-gallery.addEventListener("click", onImgClick);
+gallery.addEventListener("click", onImgClick);*/
