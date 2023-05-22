@@ -17,20 +17,32 @@ const onImgClick = (evt) => {
   }
 
   const instance = basicLightbox.create(
-    `<img src = ${evt.target.dataset.source} alt = ${evt.target.alt} width = "800" height = "600">`
+    `<img src = ${evt.target.dataset.source} alt = ${evt.target.alt} width = "800" height = "600">`,
+    {
+      onClose: (instance) => gallery.removeEventListener("keydown", escCreate),
+    }
   );
+  const escCreate = (key) => {
+    if (key.code === "Escape") {
+      instance.close();
+    }
+    console.log(10);
+  };
   instance.show();
   if (instance.visible()) {
-    gallery.addEventListener("keydown", (key) => {
-      if (key.code === "Escape") {
-        instance.close();
-      }
-    });
-    onClose: (instance) => {
-      gallery.removeEventListener("keydown");
-    };
+    gallery.addEventListener("keydown", escCreate);
   }
 };
+
+// instance.show();
+// const escCreate = (key) => {
+//   if (key.code === "Escape") {
+//     instance.close();
+//   }
+// };
+// if (instance.visible()) {
+//   gallery.addEventListener("keydown", EscCreate);
+// }
 
 gallery.addEventListener("click", onImgClick);
 
